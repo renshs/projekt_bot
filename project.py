@@ -32,7 +32,7 @@ def del_item_from_keyboard(qry, dat):
 
 
 def delete_purchases(id):
-    delete(f'http://localhost:5000/api/purchases/{id}').json()
+    delete(f'http://20105ab3.ngrok.io/api/purchases/{id}').json()
 
 
 def start(update, context):
@@ -50,7 +50,7 @@ def register(update, context):
         update.message.reply_text(
             'Вы указали неверные данные, попробуйте еще раз',
         )
-    response = get('http://localhost:5000/api/users').json()
+    response = get('http://20105ab3.ngrok.io/api/users').json()
     found = None
     for person in response['users']:
         if person['email'] == login and check_password_hash(person['hashed_password'], password):
@@ -71,7 +71,7 @@ def register(update, context):
 def things(update, context):
     if update.message.text == 'Я в магазине!':
 
-        resp = get('http://localhost:5000/api/purchases').json()
+        resp = get('http://20105ab3.ngrok.io/api/purchases').json()
         names = []
         for item in resp['purchases']:
             if item['user_id'] == context.user_data['id']:
