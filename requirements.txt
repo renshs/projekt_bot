@@ -3,7 +3,7 @@ altgraph==0.16.1
 aniso8601==8.0.0
 apis==0.0.1
 appdirs==1.4.3
-certifi==2019.11.28
+certifi==2022.12.7
 cffi==1.14.0
 chardet==3.0.4
 Click==7.0
